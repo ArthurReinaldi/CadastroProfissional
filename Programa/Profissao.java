@@ -2,8 +2,8 @@ public class Profissao extends Pessoa{
     private String profissao;
     private String cargo;
 
-    public Profissao(String nome, String email, int diaNasc, int mesNasc, int anoNasc, int idade, String profissao, String cargo) {
-        super(nome, email, diaNasc, mesNasc, anoNasc, idade);
+    public Profissao(String nome, String email, int diaNasc, int mesNasc, int anoNasc, String profissao, String cargo) {
+        super(nome, email, diaNasc, mesNasc, anoNasc);
         this.profissao = profissao;
         this.cargo = cargo;
     }

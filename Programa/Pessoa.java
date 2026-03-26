@@ -4,13 +4,12 @@ public class Pessoa {
     private String email;
     private int diaNasc, mesNasc, anoNasc, idade;
 
-    public Pessoa(String nome, String email, int diaNasc, int mesNasc, int anoNasc, int idade) {
+    public Pessoa(String nome, String email, int diaNasc, int mesNasc, int anoNasc) {
         this.nome = nome;
         this.email= email;
         this.diaNasc = diaNasc;
         this.mesNasc = mesNasc;
         this.anoNasc = anoNasc;
-        this.idade = idade;
     }
 
     public void exibir(){
@@ -52,9 +51,6 @@ public class Pessoa {
 
     public int getIdade() {
         return defineIdade(diaNasc, mesNasc, anoNasc);
-    }
-    public void setIdade(int idade) {
-        this.idade = idade;
     }
 
     public int getDiaNasc() {

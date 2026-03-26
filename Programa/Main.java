@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -88,7 +87,7 @@ public class Main {
             anoNasc = sc.nextInt();
             sc.nextLine();
 
-            if (anoNasc > anoAtual - 120 && anoNasc < anoAtual + 18) break;
+            if (anoNasc > anoAtual - 120 && anoNasc < anoAtual) break;
 
             System.out.println("Error: [Ano de Nascimento Invalida]");
         }
@@ -98,28 +97,26 @@ public class Main {
 
     public static Pessoa novaPessoa(Scanner sc){
         String nome, email;
-        int diaNasc, mesNasc, anoNasc, idade;
+        int diaNasc, mesNasc, anoNasc;
 
         nome = lerNome(sc);
         email = lerEmail(sc);
         diaNasc = lerDiaNasc(sc);
         mesNasc = lerMesNasc(sc);
         anoNasc = lerAnoNasc(sc);
-        idade = Pessoa.defineIdade(diaNasc, mesNasc, anoNasc);
 
-        return new Pessoa(nome, email, diaNasc, mesNasc, anoNasc, idade);
+        return new Pessoa(nome, email, diaNasc, mesNasc, anoNasc);
     }
 
     public static Profissao novaProfissao(Scanner sc){
         String nome, email, profissao, cargo;
-        int diaNasc, mesNasc, anoNasc, idade;
+        int diaNasc, mesNasc, anoNasc;
 
         nome = lerNome(sc);
         email = lerEmail(sc);
         diaNasc = lerDiaNasc(sc);
         mesNasc = lerMesNasc(sc);
         anoNasc = lerAnoNasc(sc);
-        idade = Pessoa.defineIdade(diaNasc, mesNasc, anoNasc);
 
         while(true){
             System.out.print("Digite a profissão: ");
@@ -139,6 +136,6 @@ public class Main {
             System.out.println("Error: [Campo Cargo Vazio]");
         }
 
-        return new Profissao(nome, email, diaNasc, mesNasc, anoNasc, idade, profissao, cargo);
+        return new Profissao(nome, email, diaNasc, mesNasc, anoNasc, profissao, cargo);
     }
 }
