@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 public class Pessoa {
     private String nome;
     private String email;
@@ -20,12 +21,16 @@ public class Pessoa {
     }
 
     public static int defineIdade(int diaNasc, int mesNasc, int anoNasc){
-        int idade;
+        int idade, anoAtual, mesAtual, diaAtual;
 
-        if (mesNasc < 6 || (mesNasc == 6 && diaNasc <= 15)) {
-            idade = 2026 - anoNasc;
+        anoAtual = LocalDate.now().getYear();
+        mesAtual = LocalDate.now().getMonthValue();
+        diaAtual = LocalDate.now().getDayOfMonth();
+
+        if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) {
+            idade = anoAtual - anoNasc;
         } else {
-            idade = 2026 - anoNasc - 1;
+            idade = anoAtual - anoNasc - 1;
         }
 
         return idade;

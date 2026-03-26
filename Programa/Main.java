@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,7 +38,7 @@ public class Main {
             System.out.print("Digite o email: ");
             email = sc.nextLine();
 
-            if (email.contains("@") && email.contains(".com")) break;
+            if (email.contains("@") && email.contains(".")) break;
 
             System.out.println("Error: [Email Invalido]");
         }
@@ -53,7 +54,7 @@ public class Main {
             diaNasc = sc.nextInt();
             sc.nextLine();
 
-            if (diaNasc > 0 && diaNasc < 13) break;
+            if (diaNasc > 0 && diaNasc < 32) break;
 
             System.out.println("Error: [Dia de Nascimento Invalida]");
         }
@@ -78,14 +79,16 @@ public class Main {
     }
 
     public static int lerAnoNasc(Scanner sc){
-        int anoNasc;
+        int anoNasc, anoAtual;
+
+        anoAtual = LocalDate.now().getYear();
 
         while(true) {
             System.out.print("Digite o Ano do Nascimento: ");
             anoNasc = sc.nextInt();
             sc.nextLine();
 
-            if (anoNasc > 1899 && anoNasc < 2027) break;
+            if (anoNasc > anoAtual - 120 && anoNasc < anoAtual + 18) break;
 
             System.out.println("Error: [Ano de Nascimento Invalida]");
         }
