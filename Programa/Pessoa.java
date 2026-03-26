@@ -6,27 +6,27 @@ public class Pessoa {
 
     public Pessoa(String nome, String email, int diaNasc, int mesNasc, int anoNasc) {
         this.nome = nome;
-        this.email= email;
+        this.email = email;
         this.diaNasc = diaNasc;
         this.mesNasc = mesNasc;
         this.anoNasc = anoNasc;
     }
 
-    public void exibir(){
+    public void exibir(){   // Método para exibir as informações da pessoa.
         System.out.println("Nome: " + getNome());
         System.out.println("Email: " + getEmail());
         System.out.println("Idade: " + getIdade());
         System.out.println();
     }
 
-    public static int defineIdade(int diaNasc, int mesNasc, int anoNasc){
+    public static int defineIdade(int diaNasc, int mesNasc, int anoNasc){   // Método para calcular a idade baseando-se na data de nascimento e na data atual.
         int idade, anoAtual, mesAtual, diaAtual;
 
-        anoAtual = LocalDate.now().getYear();
-        mesAtual = LocalDate.now().getMonthValue();
-        diaAtual = LocalDate.now().getDayOfMonth();
+        anoAtual = LocalDate.now().getYear();   // Obtém o ano atual para calcular a idade.
+        mesAtual = LocalDate.now().getMonthValue(); // Obtém o mês atual para calcular a idade.
+        diaAtual = LocalDate.now().getDayOfMonth(); // Obtém o dia atual para calcular a idade.
 
-        if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) {
+        if (mesNasc < mesAtual || (mesNasc == mesAtual && diaNasc <= diaAtual)) { // Validação de aniversário baseado no ano atual.
             idade = anoAtual - anoNasc;
         } else {
             idade = anoAtual - anoNasc - 1;

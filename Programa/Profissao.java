@@ -8,7 +8,7 @@ public class Profissao extends Pessoa{
         this.cargo = cargo;
     }
 
-    public void exibir() {
+    public void exibir() {  // Método para exibir as informações da pessoa com profissão.
         System.out.println("Nome: " + getNome());
         System.out.println("Email: " + getEmail());
         System.out.println("Idade: " + getIdade());

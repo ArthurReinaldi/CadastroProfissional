@@ -15,7 +15,7 @@ public class Main {
         sc.close();
     }
 
-    public static String lerNome(Scanner sc){
+    public static String lerNome(Scanner sc){   // Validação para o campo nome.
         String nome;
 
         while(true) {
@@ -30,7 +30,7 @@ public class Main {
         return nome;
     }
 
-    public static String lerEmail(Scanner sc){
+    public static String lerEmail(Scanner sc){  // Validação para o campo email.
         String email;
 
         while(true) {
@@ -45,7 +45,7 @@ public class Main {
         return email;
     }
 
-    public static int lerDiaNasc(Scanner sc){
+    public static int lerDiaNasc(Scanner sc){   // Validação para o campo dia de nascimento.
         int diaNasc;
 
         while(true) {
@@ -61,7 +61,7 @@ public class Main {
         return diaNasc;
     }
 
-    public static int lerMesNasc(Scanner sc){
+    public static int lerMesNasc(Scanner sc){   // Validação para o campo mês de nascimento.
         int mesNasc;
 
         while(true) {
@@ -77,7 +77,7 @@ public class Main {
         return mesNasc;
     }
 
-    public static int lerAnoNasc(Scanner sc){
+    public static int lerAnoNasc(Scanner sc){   // Validação para o campo ano de nascimento.
         int anoNasc, anoAtual;
 
         anoAtual = LocalDate.now().getYear();
@@ -95,7 +95,7 @@ public class Main {
         return anoNasc;
     }
 
-    public static Pessoa novaPessoa(Scanner sc){
+    public static Pessoa novaPessoa(Scanner sc){    // Método para criar uma nova pessoa, utilizando os métodos de validação.
         String nome, email;
         int diaNasc, mesNasc, anoNasc;
 
@@ -108,7 +108,7 @@ public class Main {
         return new Pessoa(nome, email, diaNasc, mesNasc, anoNasc);
     }
 
-    public static Profissao novaProfissao(Scanner sc){
+    public static Profissao novaProfissao(Scanner sc){  // Método para criar uma nova pessoa com profissão, utilizando os métodos de validação.
         String nome, email, profissao, cargo;
         int diaNasc, mesNasc, anoNasc;
 
@@ -122,7 +122,7 @@ public class Main {
             System.out.print("Digite a profissão: ");
             profissao = sc.nextLine();
 
-            if (!profissao.trim().isEmpty()) break;
+            if (!profissao.trim().isEmpty()) break; // Validação para o campo profissão.
 
             System.out.println("Error: [Campo Profissão Vazio]");
         }
@@ -131,7 +131,7 @@ public class Main {
             System.out.print("Digite o cargo: ");
             cargo = sc.nextLine();
 
-            if (!cargo.trim().isEmpty()) break;
+            if (!cargo.trim().isEmpty()) break; // Validação para o campo cargo.
 
             System.out.println("Error: [Campo Cargo Vazio]");
         }
